@@ -2,7 +2,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const Pool = require('pg').Pool
 const app = express()
-const port = 8000
 
 require('dotenv').config()
 
@@ -19,6 +18,6 @@ const internnetRouter = require("./routes/internnet.router.js")
 
 app.use("/api/v1/", internnetRouter)
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     console.log(`App running on port ${port}.`)
 })
